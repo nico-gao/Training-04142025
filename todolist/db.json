@@ -13,7 +13,7 @@
       "content": "todo item example 3"
     },
     {
-      "id": 4,
+      "id": "4",
       "content": "qweqwe"
     },
     {
@@ -31,6 +31,14 @@
     {
       "id": "b238",
       "content": "123123123"
+    },
+    {
+      "id": "ae0b",
+      "content": "new todo"
+    },
+    {
+      "id": "332b",
+      "content": "new todo2"
     }
   ]
 }
