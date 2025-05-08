@@ -4,6 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import ClassDemo from "./components/ClassComponents/ClassDemo";
 
+const arr = [1, 2, 3, 4, 5];
+
 function App() {
   const [count, setCount] = useState(0); // hook
   const [show, setShow] = useState(true);
@@ -24,7 +26,16 @@ function App() {
         Toggle Class Demo
       </button>
       {/* conditional rendering */}
-      {show && <ClassDemo name="alice" />}
+      {show && (
+        <ClassDemo name="alice">
+          <p>this is a child of class demo component</p>
+        </ClassDemo>
+      )}
+      <ul>
+        {arr.map((num, index) => (
+          <li key={index}>number: {num}</li> // not the best practice tp use index as key
+        ))}
+      </ul>
     </>
 
     // JSX (Javascript XML) HTML-like syntax sugar

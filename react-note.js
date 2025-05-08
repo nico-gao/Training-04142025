@@ -36,4 +36,18 @@
  * 2. props update
  * 3. forceUpdate() // don't use this
  *
+ * children prop
+ *
+ * key prop
+ *
+ * virtual DOM
+ * a representation of components, a copy of the actual DOM
+ *
+ * when there is an update, react will use diffing algorithm to compare the previous version of the virtual DOM with the updated version of the virtual DOM, identify the differences
+ *
+ * once the differences are identified, react will do the minimal changes to the actual DOM
+ *
+ * react will not reload the entire page -> SPA
+ *
+ * reconciliation: the process of 1. render new virtual DOM 2. diffing 3. mark what needs to be updated 4. apply changes to actual DOM
  */
