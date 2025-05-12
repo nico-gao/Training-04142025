@@ -1,7 +1,7 @@
 import React from "react";
 
 // props
-class ClassDemo extends React.Component {
+class ClassDemo extends React.PureComponent {
   // constructor(props) {
   //   super(props);
   //   // console.log(props);
@@ -90,20 +90,20 @@ class ClassDemo extends React.Component {
 
   // react does shallow comparison on state and props objects
   // immutability
-  shouldComponentUpdate(nextProps, nextState) {
-    //   if (
-    //     nextProps.name === this.props.name &&
-    //     nextState.counter === this.state.counter
-    //   )
-    //     return false;
+  // shouldComponentUpdate(nextProps, nextState) {
+  //     if (
+  //       nextProps.name === this.props.name &&
+  //       nextState.counter === this.state.counter
+  //     )
+  //       return false;
 
-    //   return true;
+  //     return true;
 
-    console.log("props:", nextProps === this.props);
-    console.log("state:", nextState === this.state);
+  //   console.log("props:", nextProps === this.props);
+  //   console.log("state:", nextState === this.state);
 
-    return false;
-  }
+  //   return false;
+  // }
 }
 
 export default ClassDemo;
