@@ -1,9 +1,10 @@
-import { useState, createElement, useEffect } from "react";
+import { useState, createElement, useEffect, useCallback } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import ClassDemo from "./components/ClassComponents/ClassDemo";
 import CarApp from "./components/ClassComponents/CarApp/CarApp";
+import FunctionComponentDemo from "./components/FunctionComponentDemo";
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -12,8 +13,22 @@ const arr = [1, 2, 3, 4, 5];
 // App vs App()
 
 function App() {
-  const [count, setCount] = useState(0); // hook
   const [show, setShow] = useState(true);
+  const [counter, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
+
+  // cache/memorize a function between renders
+  // const handleAdd = useCallback(() => {
+  //   setCounter((prev) => {
+  //     return prev + 1;
+  //   });
+  // }, []);
+
+  const handleAdd = () => {
+    setCounter((prev) => {
+      return prev + 1;
+    });
+  };
 
   useEffect(() => {
     console.log("hello");
@@ -44,6 +59,18 @@ function App() {
     // </>
     <div>
       <CarApp />
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        Toggle Counter
+      </button>
+      <button onClick={() => setCount(count + 1)}>increase count</button>
+      <h4>Count: {count}</h4>
+      {show && (
+        <FunctionComponentDemo handleAdd={handleAdd} counter={counter} />
+      )}
     </div>
     // JSX (Javascript XML) HTML-like syntax sugar
     // createElement() -> react elements -> react DOM/virtual DOM
