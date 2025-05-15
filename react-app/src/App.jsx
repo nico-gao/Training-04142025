@@ -1,10 +1,20 @@
-import { useState, createElement, useEffect, useCallback } from "react";
+import {
+  useState,
+  createElement,
+  useEffect,
+  useCallback,
+  createContext,
+  useContext,
+} from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import ClassDemo from "./components/ClassComponents/ClassDemo";
 import CarApp from "./components/ClassComponents/CarApp/CarApp";
 import FunctionComponentDemo from "./components/FunctionComponentDemo";
+import ReducerDemo from "./components/ReducerDemo";
+import ContextDemo from "./components/ContextDemo";
+import CounterProvider, { CounterContext } from "./context/CounterContext";
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -14,8 +24,10 @@ const arr = [1, 2, 3, 4, 5];
 
 function App() {
   const [show, setShow] = useState(true);
-  const [counter, setCounter] = useState(0);
+
   const [count, setCount] = useState(0);
+
+  const { counter } = useContext(CounterContext);
 
   // cache/memorize a function between renders
   // const handleAdd = useCallback(() => {
@@ -58,6 +70,9 @@ function App() {
     //   </ul>
     // </>
     <div>
+      <ContextDemo />
+
+      <ReducerDemo />
       <CarApp />
       <button
         onClick={() => {
