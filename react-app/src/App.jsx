@@ -15,6 +15,8 @@ import FunctionComponentDemo from "./components/FunctionComponentDemo";
 import ReducerDemo from "./components/ReducerDemo";
 import ContextDemo from "./components/ContextDemo";
 import CounterProvider, { CounterContext } from "./context/CounterContext";
+import withCounter from "./hoc/withCounter";
+import useCounter from "./hooks/useCounter";
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -24,10 +26,11 @@ const arr = [1, 2, 3, 4, 5];
 
 function App() {
   const [show, setShow] = useState(true);
+  const { counter, handleAdd } = useCounter(10);
 
   const [count, setCount] = useState(0);
 
-  const { counter } = useContext(CounterContext);
+  // const { counter } = useContext(CounterContext);
 
   // cache/memorize a function between renders
   // const handleAdd = useCallback(() => {
@@ -36,11 +39,11 @@ function App() {
   //   });
   // }, []);
 
-  const handleAdd = () => {
-    setCounter((prev) => {
-      return prev + 1;
-    });
-  };
+  // const handleAdd = () => {
+  //   setCounter((prev) => {
+  //     return prev + 1;
+  //   });
+  // };
 
   useEffect(() => {
     console.log("hello");
@@ -70,22 +73,24 @@ function App() {
     //   </ul>
     // </>
     <div>
+      <h3>App Counter: {counter}</h3>
+      <button onClick={handleAdd}>Add One to App Counter</button>
       <ContextDemo />
 
       <ReducerDemo />
       <CarApp />
-      <button
+      {/* <button
         onClick={() => {
           setShow(!show);
         }}
       >
         Toggle Counter
-      </button>
-      <button onClick={() => setCount(count + 1)}>increase count</button>
+      </button> */}
+      {/* <button onClick={() => setCount(count + 1)}>increase count</button>
       <h4>Count: {count}</h4>
       {show && (
         <FunctionComponentDemo handleAdd={handleAdd} counter={counter} />
-      )}
+      )} */}
     </div>
     // JSX (Javascript XML) HTML-like syntax sugar
     // createElement() -> react elements -> react DOM/virtual DOM

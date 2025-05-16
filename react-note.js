@@ -50,4 +50,12 @@
  * react will not reload the entire page -> SPA
  *
  * reconciliation: the process of 1. render new virtual DOM 2. diffing 3. mark what needs to be updated 4. apply changes to actual DOM
+ *
+ *
+ *
+ *                                 hoc                                        hook
+ *
+ * what     function that returns a class component         function that returns values
+ * how                 class/functional, wrapper                       functional, use directly
+ * debugging            harder                                          cleaner
  */
