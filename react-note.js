@@ -58,4 +58,16 @@
  * what     function that returns a class component         function that returns values
  * how                 class/functional, wrapper                       functional, use directly
  * debugging            harder                                          cleaner
+ *
+ *
+ *
+ *
+ * Typescript
+ *
+ * superset of Javascript
+ * Provides static typing to Javascript
+ *
+ * maintainability, readability, scalability
+ *
+ * allow developers to write better code
  */
