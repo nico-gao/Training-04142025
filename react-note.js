@@ -70,4 +70,17 @@
  * maintainability, readability, scalability
  *
  * allow developers to write better code
+ *
+ *
+ *
+ * Redux
+ *
+ * redux-core: base
+ * react-redux: connect redux with react
+ * redux-toolkit: modern redux code
+ *
+ * FLUX: pattern, architecture
+ * unidirectional data flow
+ * view -> action -> reducer -> store
+ *
  */
