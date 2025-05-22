@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import store from "../store/store";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchInitialData, sell } from "../slice/RTKCarsSlice";
 
 const CarsApp = () => {
   // const { cars } = store.getState();
-  console.log(store);
-  const cars = useSelector((state) => state.cars); // retrieving state, subscribing
+  const { cars } = useSelector((state) => state.cars); // retrieving state, subscribing
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchInitialData());
+  }, []);
+
   return (
     <div>
+      <h3>RTK Cars</h3>
       {cars.map(({ make, quantity, id }) => (
         <div
           key={id}
@@ -25,9 +31,7 @@ const CarsApp = () => {
         >
           <div>{make}</div>
           <div>{quantity}</div>
-          <button onClick={() => dispatch({ type: "SELL", payload: id })}>
-            Sell
-          </button>
+          <button onClick={() => dispatch(sell(id))}>Sell</button>
         </div>
       ))}
     </div>

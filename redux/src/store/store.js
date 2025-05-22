@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { carsReducer } from "../slice/CarsSlice";
 
 const rootReducer = combineReducers({
